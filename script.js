@@ -13,7 +13,8 @@ function createProductImageElement(imageSource) {
 }
 
 function cartItemClickListener(event) {
-  // coloque seu código aqui
+  const cartProducts = document.querySelector('.cart__item');
+  return cartProducts.remove();
 }
 
 function createCustomElement(element, className, innerText) {
@@ -75,12 +76,6 @@ const fetchComputers = () => {
 function getSkuFromProductItem(item) {
   return item.querySelector('span.item__sku').innerText;
 }
-
-const fetchItensCart = (sku) => {
-  const search = fetch(`https://api.mercadolibre.com/items/${sku}`)
-  .then((cartItens) => cartItens.json())
-  .then(({ id }) => console.log(id.find((identifier) => identifier === sku)));
-};
 
 window.onload = () => { 
   fetchComputers();
