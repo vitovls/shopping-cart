@@ -103,11 +103,14 @@ const fetchComputers = () => {
   return search;
 };
 
-function getSkuFromProductItem(item) {
+/* function getSkuFromProductItem(item) {
   return item.querySelector('span.item__sku').innerText;
-}
+} */
+
+document.querySelector('.empty-cart').addEventListener('click', () => {
+  document.querySelector('.cart__items').innerHTML = '';
+});
 
 window.onload = () => { 
   fetchComputers();
-  getSkuFromProductItem();
 };
